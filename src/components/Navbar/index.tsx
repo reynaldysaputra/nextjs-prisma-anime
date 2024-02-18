@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { InputSearch } from "./inputSearch"
+import { UserActionButton } from "./UserActionButton";
 
 export const Navbar = () => {
   return (
@@ -11,9 +12,9 @@ export const Navbar = () => {
         >
           CuyAnimeList
         </Link>
-        <InputSearch
-          
-        />
+        <InputSearch/>
+        {/* @ts-expect-error Server Component */}
+        <UserActionButton/>
       </div>
     </header>
   )

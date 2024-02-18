@@ -11,7 +11,7 @@ export const AnimeList:React.FC<IAnimeListProps> = ({
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 px-4">
       {dataAnimes?.data?.map((anime: any) => (
-        <Link key={anime.mal_id} href={`/${anime.mal_id}`} className="shadow-lg text-color-primary hover:text-color-accent transition-all">
+        <Link key={anime.mal_id} href={`/anime/${anime.mal_id}`} className="shadow-lg text-color-primary hover:text-color-accent transition-all">
           <Image
             src={anime.images.webp.image_url}
             alt={"..."}

@@ -3,16 +3,15 @@ import { AnimeList } from "@/components/AnimeList/index";
 import HeaderMenu from "@/components/Utilities/HeaderMenu";
 import Pagination from "@/components/Utilities/Pagination";
 import { useState } from "react";
-import useSWR from 'swr';
-
-const fetcher = (...args:any) => fetch(args).then(res => res.json())
+import { getAnimes } from "../../libs/api-libs";
 
 const Page = () => {
   const [page, setPage] = useState(1);
-  const { data: animes, error, isLoading } = useSWR<any>(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?page=${page}`, 
-    fetcher
-  );
+  const {animes, isLoading} = getAnimes({
+    resource: "/top/anime",
+    limit: "10",
+    page: page.toString()
+  })
 
   if(isLoading) return <h1 className="p-4 text-color-accent">Loading...</h1>
 

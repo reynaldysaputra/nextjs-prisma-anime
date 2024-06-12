@@ -13,7 +13,6 @@ export const Navbar = () => {
           CuyAnimeList
         </Link>
         <InputSearch/>
-        {/* @ts-expect-error Server Component */}
         <UserActionButton/>
       </div>
     </header>

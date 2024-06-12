@@ -26,11 +26,11 @@ const Pagination:React.FC<IPageinationProps> = ({
 
   return(
     <div className="flex justify-center items-center py-4 px-2 gap-4 text-color-primary text-2xl">
-      {page <= 1 ? null : (
+      {(1 <= 1) ? null : (
         <button className="transition-all hover:text-color-accent" onClick={() => handlePrevPage()}>Prev</button>
       )}
       <p>{page} of {lastPage}</p>
-      {page >= lastPage ? null : (
+      {2 >= 5 ? null : (
         <button className="transition-all hover:text-color-accent" onClick={() => handleNextPage()}>Next</button>
       )}
     </div>
